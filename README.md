@@ -121,6 +121,10 @@ npm run dev
    ```
 6. デプロイ完了
 
+**注意**: Railwayでは各サービスが個別の`railway.json`を使用します。
+- バックエンド: ルートの`railway.json` + `Dockerfile.production`
+- フロントエンド: `frontend/railway.json` + Nixpacks
+
 ### デプロイ後の設定
 
 - **バックエンド**: Railway提供のURLでAPIにアクセス可能
