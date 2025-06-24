@@ -1,0 +1,11 @@
+[environments.production]
+
+[environments.production.services.backend]
+build = { builder = "dockerfile", dockerfilePath = "Dockerfile.production" }
+deploy = { restartPolicyType = "on_failure", restartPolicyMaxRetries = 10 }
+
+[environments.production.services.frontend]
+source = { rootDirectory = "frontend" }
+build = { builder = "nixpacks" }
+deploy = { restartPolicyType = "on_failure", restartPolicyMaxRetries = 10 }
+variables = { NODE_ENV = "production" }
