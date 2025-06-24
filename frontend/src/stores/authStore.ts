@@ -30,7 +30,11 @@ export const useAuthStore = create<AuthState>()(
         formData.append('username', username)
         formData.append('password', password)
 
-        const response = await axios.post('/auth/login', formData)
+        const response = await axios.post('/auth/login', formData, {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        })
         const { access_token } = response.data
 
         // ユーザー情報を取得
@@ -49,6 +53,10 @@ export const useAuthStore = create<AuthState>()(
           email,
           username,
           password,
+        }, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
         })
       },
 
