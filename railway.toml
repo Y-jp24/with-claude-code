@@ -1,0 +1,10 @@
+[[services]]
+name = "backend"
+build.builder = "dockerfile"
+build.dockerfilePath = "Dockerfile.production"
+
+[[services]]
+name = "frontend"
+source.rootDirectory = "frontend"
+build.builder = "nixpacks"
+variables.NODE_ENV = "production"
