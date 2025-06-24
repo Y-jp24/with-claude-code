@@ -79,11 +79,13 @@ npm run dev
 
 ## デプロイ
 
-### Railway へのデプロイ
+### デプロイ方法
+
+#### バックエンド（Railway）
 
 1. Railway アカウントを作成: https://railway.app/
 2. 新しいプロジェクトを作成
-3. GitHub リポジトリと連携
+3. GitHub リポジトリと連携: `Y-jp24/with-claude-code`
 4. 環境変数を設定:
    ```
    OPENAI_API_KEY=your_openai_api_key
@@ -93,13 +95,34 @@ npm run dev
    DATABASE_URL=sqlite:///./idea_management.db
    ENVIRONMENT=production
    ```
-5. デプロイ（自動的にDockerfileを使用してビルド）
+5. デプロイ（`railway.json`と`Dockerfile.production`を使用）
+
+#### フロントエンド（推奨: Vercel）
+
+1. Vercel アカウントを作成: https://vercel.com/
+2. GitHub リポジトリと連携
+3. **Root Directory**: `frontend` を設定
+4. 環境変数を設定:
+   ```
+   NEXT_PUBLIC_API_URL=https://your-railway-backend-url.railway.app/api/v1
+   ```
+5. デプロイ
+
+#### フロントエンド（代替: Railway）
+
+1. Railwayで新しいサービスを追加
+2. 同じGitHubリポジトリを選択
+3. `railway.frontend.json`を`railway.json`にリネーム
+4. 環境変数を設定:
+   ```
+   NEXT_PUBLIC_API_URL=https://your-railway-backend-url.railway.app/api/v1
+   ```
 
 ### デプロイ後の設定
 
-- Railway提供のURLでAPIにアクセス可能
-- フロントエンドは別途Vercel等にデプロイ推奨
-- 本番環境では適切なCORS設定とセキュリティ設定を追加
+- **バックエンド**: Railway提供のURLでAPIにアクセス可能
+- **フロントエンド**: Vercel or Railway提供のURLでアクセス可能
+- **CORS設定**: 本番環境では適切なオリジンを設定推奨
 
 ## ライセンス
 
