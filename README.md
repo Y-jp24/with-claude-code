@@ -108,15 +108,18 @@ npm run dev
    ```
 5. デプロイ
 
-#### フロントエンド（代替: Railway）
+#### フロントエンド（Railway）
 
-1. Railwayで新しいサービスを追加
-2. 同じGitHubリポジトリを選択
-3. `railway.frontend.json`を`railway.json`にリネーム
-4. 環境変数を設定:
+1. Railway プロジェクトで **New Service** → **GitHub Repo**
+2. 同じGitHubリポジトリ `Y-jp24/with-claude-code` を選択
+3. サービス名を「frontend」に変更
+4. **Settings** → **Source** → **Root Directory** を `frontend` に設定
+5. 環境変数を設定:
    ```
    NEXT_PUBLIC_API_URL=https://your-railway-backend-url.railway.app/api/v1
+   NODE_ENV=production
    ```
+6. デプロイ完了
 
 ### デプロイ後の設定
 

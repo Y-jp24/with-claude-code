@@ -20,9 +20,10 @@ class Settings(BaseSettings):
     # CORS設定
     BACKEND_CORS_ORIGINS: List[str] = [
         "http://localhost:3000",
-        "http://localhost:8000",
+        "http://localhost:8000", 
         "https://localhost:3000",
         "https://localhost:8000",
+        "https://*.railway.app",  # Railway フロントエンドを許可
         "*"  # 開発環境のため一時的に全許可
     ]
     
