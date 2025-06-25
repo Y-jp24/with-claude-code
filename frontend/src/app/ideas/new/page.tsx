@@ -22,11 +22,27 @@ export default function NewIdeaPage() {
   const onSubmit = async (data: IdeaForm) => {
     setIsLoading(true)
     try {
-      await axios.post('/ideas', data)
+      console.log('Submitting idea:', data)
+      const response = await axios.post('/ideas/', data)
+      console.log('Idea created successfully:', response.data)
       toast.success('アイデアを作成しました')
-      router.push('/ideas')
-    } catch (error) {
+      
+      // 少し待ってからページ遷移（レスポンス処理を確実にするため）
+      setTimeout(() => {
+        router.push('/ideas')
+      }, 1000)
+    } catch (error: any) {
       console.error('Failed to create idea:', error)
+      if (error.response) {
+        console.error('Response error:', error.response.status, error.response.data)
+        toast.error(error.response.data?.detail || 'アイデアの作成に失敗しました')
+      } else if (error.request) {
+        console.error('Network error:', error.request)
+        toast.error('ネットワークエラーが発生しました')
+      } else {
+        console.error('Unknown error:', error.message)
+        toast.error('エラーが発生しました')
+      }
     } finally {
       setIsLoading(false)
     }
