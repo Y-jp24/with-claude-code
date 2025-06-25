@@ -8,6 +8,10 @@ COPY frontend/package*.json ./
 # 依存関係をインストール
 RUN npm install
 
+# next.config.jsとtsconfig.jsonを先にコピー
+COPY frontend/next.config.js ./
+COPY frontend/tsconfig.json ./
+
 # アプリケーションコードをコピー
 COPY frontend/ .
 

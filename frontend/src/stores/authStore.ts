@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import axios from '@/lib/axios'
+import axios from '../lib/axios'
 
 interface User {
   id: number

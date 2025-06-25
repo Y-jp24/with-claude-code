@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faArrowLeft, faEdit, faRobot, faComment, faBookmark, faShare 
 } from '@fortawesome/free-solid-svg-icons'
-import Layout from '@/components/Layout'
-import axios from '@/lib/axios'
+import Layout from '../../../components/Layout'
+import axios from '../../../lib/axios'
 import toast from 'react-hot-toast'
 import ReactMarkdown from 'react-markdown'
 

@@ -5,9 +5,9 @@ import { useRouter } from 'next/navigation'
 import Draggable from 'react-draggable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTimes, faEdit, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
-import Layout from '@/components/Layout'
-import { useAuthStore } from '@/stores/authStore'
-import axios from '@/lib/axios'
+import Layout from '../../components/Layout'
+import { useAuthStore } from '../../stores/authStore'
+import axios from '../../lib/axios'
 import toast from 'react-hot-toast'
 
 interface HomeItem {

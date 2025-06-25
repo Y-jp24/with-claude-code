@@ -5,9 +5,9 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faEdit, faTrash, faEye } from '@fortawesome/free-solid-svg-icons'
-import Layout from '@/components/Layout'
-import { useAuthStore } from '@/stores/authStore'
-import axios from '@/lib/axios'
+import Layout from '../../components/Layout'
+import { useAuthStore } from '../../stores/authStore'
+import axios from '../../lib/axios'
 import toast from 'react-hot-toast'
 
 interface Idea {

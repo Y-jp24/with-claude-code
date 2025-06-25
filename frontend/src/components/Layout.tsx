@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faLightbulb, faSignOutAlt, faUser } from '@fortawesome/free-solid-svg-icons'
-import { useAuthStore } from '@/stores/authStore'
+import { useAuthStore } from '../stores/authStore'
 
 interface LayoutProps {
   children: React.ReactNode
