@@ -38,10 +38,13 @@ Thumbs.db
 # Logs
 *.log
 
-# Database
+# Database files (but keep schema/migrations)
 *.db
 *.sqlite
 *.sqlite3
+# Keep sample/seed database for development
+!**/sample.db
+!**/seed.db
 
 # Environment variables
 .env

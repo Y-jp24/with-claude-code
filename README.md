@@ -18,6 +18,46 @@
 - **データベース**: SQLite（本番環境では変更可能）
 - **デプロイ**: Railway, Docker
 
+## 🚀 クイックスタート
+
+### 1. プロジェクトのクローン
+
+```bash
+git clone <repository-url>
+cd with-claude-code
+```
+
+### 2. 自動セットアップ（推奨）
+
+```bash
+# 開発環境を自動でセットアップ
+./setup-dev.sh
+```
+
+このスクリプトが以下を自動で行います：
+- 必要なディレクトリの作成
+- 環境変数ファイルの生成
+- データベースの初期化
+- 初期ユーザーの作成
+
+### 3. Docker で起動
+
+```bash
+docker-compose up
+```
+
+### 4. アクセス
+
+- **フロントエンド**: http://localhost:3000
+- **バックエンドAPI**: http://localhost:8000
+- **API文書**: http://localhost:8000/docs
+
+### 5. ログイン
+
+初期ユーザー：
+- **admin@example.com** (パスワード: admin123)
+- **demo@example.com** (パスワード: demo123)
+
 ## 開発環境のセットアップ
 
 ### 前提条件
